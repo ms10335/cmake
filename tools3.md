@@ -249,6 +249,12 @@ add_executable(${PROJECT_NAME} main.cpp)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 ```
 
+```cmake
+set_target_properties(${PROJECT_NAME} PROPERTIES
+                      C_STANDARD 17
+                      C_STANDARD_REQUIRED ON)
+```
+
 ### Zadanie
 
 Włącz standard C++17 w projekcie greeter
@@ -274,7 +280,9 @@ ___
 
 Dla poszerzenia wiedzy fajna prezentacja z Wro.cpp
 
-[https://muttleyxd.github.io](https://muttleyxd.github.io)
+[CMake - from zero to something](https://muttleyxd.github.io)
+[19 reasons why CMake is actually awesome](https://kubasejdak.com/19-reasons-why-cmake-is-actually-awesome)
+[Modern CMake is like inheritance](https://kubasejdak.com/modern-cmake-is-like-inheritance)
 
 ___
 

@@ -3,7 +3,7 @@
 #include "../greeter.hpp"
 #include "../person.hpp"
 
-TEST_CASE("Greeter test", "[meet]" ) {
+TEST_CASE("Greeter test", "[meet][string]" ) {
     std::string george = "George";
     Greeter greeter{george};
     REQUIRE(greeter.meet() == "It's nice to meet you " + george + " :)\n");

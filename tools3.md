@@ -163,25 +163,118 @@ add_executable(${PROJECT_NAME} main.cpp vectorFunctions.cpp)
 
 ___
 
-## Komendy cmake'a
+## Komendy cmake'a - tworzenie binarek i bibliotek
 
 [CMake manual](https://cmake.org/cmake/help/latest/manual/cmake-commands.7.html#id4)
 
-* `add_executable(<name> [source1] [source2 ...])`
+Poniższe komendy możesz potraktować jako "konstruktory". Tworzą one "targety".
 
+* `add_executable(<name> [source1] [source2 ...])`
 * `add_library(<name> [STATIC | SHARED | MODULE] [source1] [source2 ...])`
 
-* `add_test(NAME <name> COMMAND <command> [<arg>...])`
-
 ```cmake
-add_executable(${PROJECT_NAME} main.cpp vectorFunctions.cpp)
-add_executable(${PROJECT_NAME}-ut test.cpp vectorFunctions.cpp)
-add_test(NAME ${PROJECT_NAME}_test COMMAND ${PROJECT_NAME}-ut)
+add_library(${PROJECT_NAME}-lib STATIC functions.cpp modules.cpp)
+add_executable(${PROJECT_NAME} main.cpp functions.cpp modules.cpp)
+add_executable(${PROJECT_NAME}-ut test.cpp functions.cpp modules.cpp)
 ```
 
-[Zobacz CMakeLists.txt dla zadania vectorOfSharedPointers](https://github.com/coders-school/kurs_cpp_podstawowy/blob/module3/module3/homework/vectorOfSharedPointers/CMakeLists.txt)
+### Problem
 
-Powyższe komendy możesz potraktować jako "konstruktory". Tworzą one "targety".
+Powielona lista plików
+
+### Rozwiązanie
+
+* Wrzucenie plików do zmiennej
+
+### Zadanie
+
+Wrzuć listę plików do zmiennej i skorzystaj z niej
+
+___
+
+### Problem
+
+Drobne różnice w plikach pomiędzy targetami
+
+### Rozwiązanie
+
+* Utworzenie biblioteki
+
+___
+
+## Komendy cmake'a - linkowanie
+
+* `target_link_libraries(<target> ... <item>... ...)`
+
+```cmake
+add_library(${PROJECT_NAME}-lib STATIC functions.cpp modules.cpp)
+add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME}-ut test.cpp)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
+target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib)
+```
+
+### Zadanie
+
+* Utwórz bibliotekę, która będzie zawierać powtarzające się pliki cpp i zlinkuj z nią targety, które ich używały
+
+___
+
+## Komendy cmake'a - flagi kompilacji
+
+`target_compile_options(<target> [BEFORE] <INTERFACE|PUBLIC|PRIVATE> [items1...] [<INTERFACE|PUBLIC|PRIVATE> [items2...] ...])`
+
+```cmake
+add_executable(${PROJECT_NAME} main.cpp)
+target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wextra -Werror -pedantic)
+```
+
+### Zadanie
+
+Dodaj flagi kompilacji `-Wall -Wextra -Werror -pedantic -Wconversion` do projektu greeter
+
+___
+
+## Włączanie standardu C++17
+
+```cmake
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+```
+
+Powyższe może nie działać dla MSVC.
+
+```cmake
+add_executable(${PROJECT_NAME} main.cpp)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
+```
+
+### Zadanie
+
+Włącz standard C++17 w projekcie greeter
+
+___
+
+## Dodawanie testów do CTest
+
+`add_test(NAME <name> COMMAND <command> [<arg>...])`
+
+```cmake
+enable_testing()
+add_test(NAME someTests COMMAND ${PROJECT_NAME}-ut)
+```
+
+### Zadanie
+
+Dodaj binarkę z testami, która powinna być odpalana za pomocą `ctest`
+
+___
+
+## CMake - from zero to something
+
+Dla poszerzenia wiedzy fajna prezentacja z Wro.cpp
+
+[https://muttleyxd.github.io](https://muttleyxd.github.io)
 
 ___
 

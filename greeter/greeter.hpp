@@ -1,11 +1,13 @@
 #pragma once
 #include <string>
+#include "person.hpp"
 
 class Greeter
 {
 public:
     Greeter();
-    Greeter(std::string name);
+    Greeter(const std::string & name);
+    Greeter(const Person & person);
     ~Greeter();
     std::string meet() const;
 

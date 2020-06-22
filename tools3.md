@@ -108,7 +108,80 @@ ___
 
 ## Zadanie
 
-Napisz prosty CMakeLists.txt dla programu z katalogu `greeter`, zbuduj go za pomocą cmake'a i uruchom.
+W katalogu greeter znajdziesz malutki program. Zapoznaj się z jego kodem.
+
+1. Skompiluj program z linii komend i uruchom go.
+
+```bash
+g++ -std=c++17 -Wall -Werror -Wextra -pedantic *.cpp - o greeter
+./greeter
+```
+
+2. Napisz prosty Makefile dla tego programu. Zbuduj go za pomocą `make` i uruchom.
+3. Napisz prosty CMakeLists.txt dla programu z katalogu `greeter`, zbuduj go za pomocą `cmake` i uruchom.
+
+___
+
+## Q&A
+
+___
+
+## CMake - zmienne
+
+Zmienne tworzymy za pomocą komendy `set`
+
+```cmake
+set(VARIABLE value)
+```
+
+Np.
+
+```cmake
+set(NAME TheGreatestProject)
+```
+
+Odnosimy się do nich później obejmując w nawiasy `{}` i poprzedzając znakiem `$`
+
+```cmake
+add_executable(${NAME} main.cpp)
+```
+
+Spowoduje to utworzenie targetu `TheGreatestProject`, w ramach którego skompilowany zostanie plik `main.cpp`
+
+___
+
+## CMake - predefiniowane zmienne
+
+CMake domyślnie dostarcza kilka zmiennych. Odwoływanie się do nich bezpośrednio lub ich modyfikacja zazwyczaj nie są uznawane za dobre praktyki.
+
+Możemy za to bez większych problemów wykorzystać zmienną `${PROJECT_NAME}`. Zawiera ona nazwę projektu zdefiniowaną przez komendę `project()`
+
+```cmake
+project(vectorFunctions)
+add_executable(${PROJECT_NAME} main.cpp vectorFunctions.cpp)
+```
+
+___
+
+## Komendy cmake'a
+
+[CMake manual](https://cmake.org/cmake/help/latest/manual/cmake-commands.7.html#id4)
+
+* `add_executable(<name> [source1] [source2 ...])`
+
+* `add_library(<name> [STATIC | SHARED | MODULE] [source1] [source2 ...])`
+
+* `add_test(NAME <name> COMMAND <command> [<arg>...])`
+
+```cmake
+add_executable(${PROJECT_NAME} main.cpp vectorFunctions.cpp)
+add_executable(${PROJECT_NAME}-ut test.cpp vectorFunctions.cpp)
+add_test(NAME ${PROJECT_NAME}_test COMMAND ${PROJECT_NAME}-ut)
+```
+
+[Zobacz CMakeLists.txt dla zadania vectorOfSharedPointers](https://github.com/coders-school/kurs_cpp_podstawowy/blob/module3/module3/homework/vectorOfSharedPointers/CMakeLists.txt)
+
+Powyższe komendy możesz potraktować jako "konstruktory". Tworzą one "targety".
 
 ___
 

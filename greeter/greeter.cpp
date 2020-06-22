@@ -6,8 +6,14 @@ Greeter::Greeter()
     std::cout << "Hello handsome :)\n";
 }
 
-Greeter::Greeter(std::string name)
+Greeter::Greeter(const std::string & name)
     : name_(name)
+{
+    std::cout << "Hello " << name_ << "!\n";
+}
+
+Greeter::Greeter(const Person & person)
+    : name_(person.getName())
 {
     std::cout << "Hello " << name_ << "!\n";
 }

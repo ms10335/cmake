@@ -50,6 +50,7 @@ ___
 ## Kompilacja w C++
 
 ### Pamiętacie fazy kompilacji?
+<!-- .element: class="fragment fade-in" -->
 
 ```Makefile
 SOURCES=$(wildcard src/*.cpp)
@@ -58,11 +59,13 @@ OBJECTS=$(patsubst %.cpp, %.o, $(SOURCES))
 main: $(OBJECTS)
 	g++ $^ -o $@
 
-$(OBJECTS): src/%.o : src/%.cpp
+$(OBJECTS): src/%.o : src/%.cpp src/%.hpp
 	g++ -c $< -o $@
 ```
+<!-- .element: class="fragment fade-in" -->
 
 ### Zmienne pamiętające kontekst
+<!-- .element: class="fragment fade-in" -->
 
 * <!-- .element: class="fragment fade-in" --> <code>$@</code> - nazwa pliku targetu w aktualnie uruchomionej regule
 * <!-- .element: class="fragment fade-in" --> <code>$<</code> - nazwa pierwszej zależności
@@ -89,12 +92,12 @@ ___
 
 ## Polecenie `make`
 
-* domyślnie szuka w bieżącym katalogu pliku `Makefile`
-* automatyzuje czynności poprzez wykonywanie receptur zapisanych w plikach `Makefile`
-* domyślnie wykonuje pierwszą recepturę
-* pozwala na warunkowe wykonywanie czynności
-* pozwala definiować wiele zależności
-* domyślnie uwzględnia daty modyfikacji zależności i na tej podstawie podejmuje decyzję, czy wykonać daną recepturę
+* <!-- .element: class="fragment fade-in" --> domyślnie szuka w bieżącym katalogu pliku Makefile
+* <!-- .element: class="fragment fade-in" --> automatyzuje czynności poprzez wykonywanie receptur zapisanych w plikach Makefile
+* <!-- .element: class="fragment fade-in" --> domyślnie wykonuje pierwszą recepturę
+* <!-- .element: class="fragment fade-in" --> pozwala na warunkowe wykonywanie czynności
+* <!-- .element: class="fragment fade-in" --> pozwala definiować wiele zależności
+* <!-- .element: class="fragment fade-in" --> domyślnie uwzględnia daty modyfikacji zależności i na tej podstawie podejmuje decyzję, czy wykonać daną recepturę
 
 ___
 

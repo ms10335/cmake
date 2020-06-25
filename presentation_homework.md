@@ -19,9 +19,9 @@ ___
 
 ### Pre-work
 
-* Dowiedzcie się czym jest problem diamentowy
 * Poczytajcie o zasadach SOLID, dotyczących pisania dobrego kodu obiektowego
-* Lektura o wzorcach projektowych z przykładami w C++ - [refactoring.guru](https://refactoring.guru/design-patterns)
+* Poczytajcie o zasadach dobrego kodu w C++ na [CppCoreGuidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md)
+* Dowiedzcie się czym jest problem diamentowy na Obiektowość #4
 
 ___
 

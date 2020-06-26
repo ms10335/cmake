@@ -84,7 +84,7 @@ W katalogu greeter znajdziesz malutki program. Zapoznaj się z jego kodem.
 ### Zaklęcie kompilacji
 
 ```bash
-g++ -std=c++17 -Wall -Werror -Wextra -pedantic *.cpp - o greeter
+g++ -std=c++17 -Wall -Werror -Wextra -pedantic *.cpp -o greeter
 ./greeter
 ```
 

@@ -52,6 +52,6 @@ Na podstawie lektury plików CMakeLists.txt z prac domowych wywnioskujcie, w jak
 
 * Utwórzcie proste testy do projektu SHM (co najmniej 1 test metodą Copy&Paste z innych prac domowych)
 * Skopiujcie odpowiednie pliki, które pozwolą na użycie `gtesta`
-* Dodajcie binarkę z testami co CMakeLists.txt. Nazwijcie ją `${PROJECT_NAME}-ut`
+* Dodajcie binarkę z testami do CMakeLists.txt. Nazwijcie ją `${PROJECT_NAME}-ut`
 * Dodajcie odpalanie testów za pomocą `ctest`
 * Zmodyfikujcie plik `.github/workflows/main.yml` aby GitHub dodatkowo uruchamiał jeszcze testy

@@ -36,7 +36,7 @@ ___
 mkdir build     # tworzymy katalog z wynikami budowania
 cd build        # wchodzimy do tego katalogu
 cmake ..        # generujemy system budowania podając ścieżkę do pliku CMakeLists.txt
-cmake --build   # budujemy projekt
+cmake --build . # budujemy projekt
 ```
 
 `cmake --build` można zamienić na `make` jeśli wiemy, że na pewno generujemy Makefile.
@@ -50,6 +50,8 @@ ___
 ## Zadanie
 
 Napisz prosty CMakeLists.txt dla programu z katalogu `greeter`, zbuduj go za pomocą `cmake` i uruchom.
+
+Zauważ, że są tutaj też testy. Dopisz dodatkowy target dla testów.
 
 ___
 

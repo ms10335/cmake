@@ -10,4 +10,4 @@
 
 ### [`cmake`](module1/presentation_cmake.md)
 
-### [homework](module1/presentation_homework.md)
+### [Zadanie domowe](module1/presentation_homework.md)

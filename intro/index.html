@@ -8,22 +8,13 @@
 
         <meta name="description" content="OOP">
         <meta name="author" content="Mateusz Adamski & Łukasz Ziobroń">
-        
-        <link rel="stylesheet" href="../../css/reset.css">
-        <link rel="stylesheet" href="../../css/reveal.css">
-        <link rel="stylesheet" href="../../css/theme/coders.css" id="theme">
+
+        <link rel="stylesheet" href="../../dist/reset.css">
+        <link rel="stylesheet" href="../../dist/reveal.css">
+        <link rel="stylesheet" href="../../dist/theme/coders.css" id="theme">
 
         <!-- Theme used for syntax highlighting of code -->
-        <link rel="stylesheet" href="../../lib/css/monokai.css">
-
-        <!-- Printing and PDF exports -->
-        <script>
-            var link = document.createElement( 'link' );
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
-            document.getElementsByTagName( 'head' )[0].appendChild( link );
-        </script>
+        <link rel="stylesheet" href="../../plugin/highlight/monokai.css">
     </head>
     <body>
         <div class="reveal">
@@ -95,17 +86,17 @@
                         ## Dalszy rozwój SHM
 
                         Zachęcamy wszystkich do ciągłego rozwijania projektu SHM "w tle", uzupełniając go o rzeczy, których na bieżąco będziemy się uczyć w trakcie kursu, takie jak:
-                        <!-- .element: class="fragment fade-in" --> 
-                        
+                        <!-- .element: class="fragment fade-in" -->
+
                         * <!-- .element: class="fragment fade-in" --> system budowania
                         * <!-- .element: class="fragment fade-in" --> testy jednostkowe
                         * <!-- .element: class="fragment fade-in" --> nowości z C++11/14/17/20
-                        
+
                         Nie będziemy za to przyznawać dodatkowych punktów ani też sprawdzać tego kodu. Sami rozwijajcie tę aplikację i dzielcie się spostrzeżeniami wewnątrz swojej grupy i z innymi grupami na Discordzie.
-                        <!-- .element: class="fragment fade-in" --> 
-                        
+                        <!-- .element: class="fragment fade-in" -->
+
                         Celem jest skuteczna nauka C++ i szybkie stosowanie nowo poznanych rzeczy w projektach, dzięki czemu zapamiętacie je lepiej :)
-                        <!-- .element: class="fragment fade-in" --> 
+                        <!-- .element: class="fragment fade-in" -->
 
                         </textarea>
                     </section>
@@ -128,26 +119,20 @@
             </div>
         </div>
 
-        <script src="../../js/reveal.js"></script>
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
 
         <script>
-            // More info about config & dependencies:
-            // - https://github.com/hakimel/reveal.js#configuration
-            // - https://github.com/hakimel/reveal.js#dependencies
             Reveal.initialize({
-                width: 1200,
-                height: 750,
-                slideNumber: true,
-                hash: true,
-                pdfSeparateFragments: false,
-                dependencies: [
-                    { src: '../../plugin/externalcode/externalcode.js', condition: function() { return !!document.querySelector( '[data-code]' ); } },
-                    { src: '../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: '../../plugin/markdown/marked.js' },
-                    { src: '../../plugin/markdown/markdown.js' },
-                    { src: '../../plugin/notes/notes.js', async: true }
-                ]
+                    width: 1200,
+                    height: 750,
+                    slideNumber: true,
+                    hash: true,
+                    pdfSeparateFragments: false,
+                    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
             });
-        </script>
+    </script>
     </body>
 </html>

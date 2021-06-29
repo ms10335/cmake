@@ -1,42 +1,30 @@
 <!-- .slide: data-background="#111111" -->
 
-# Narzędzia #3
+# `cmake`
 
-## Podsumowanie
+## Praca domowa
 
 <a href="https://coders.school">
-    <img width="500" data-src="../coders_school_logo.png" alt="Coders School" class="plain">
+    <img width="500" src="../coders_school_logo.png" alt="Coders School" class="plain">
 </a>
-
-___
-
-## Co pamiętasz z dzisiaj?
-
-### Napisz na czacie jak najwięcej haseł
-<!-- .element: class="fragment fade-in" -->
 
 ___
 
 ### Pre-work
 
-* Poczytajcie o zasadach SOLID, dotyczących pisania dobrego kodu obiektowego
-* Poczytajcie o zasadach dobrego kodu w C++ na [CppCoreGuidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md)
-* Dowiedzcie się czym jest problem diamentowy na Obiektowość #4
+* Poczytaj o zasadach SOLID, dotyczących pisania dobrego kodu obiektowego
+* Poczytaj o zasadach dobrego kodu w C++ na [CppCoreGuidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md)
+* Dowiedz się czym jest system budowania Make
 
 ___
 
 ### Post-work
 
-* Dorzućcie do projektu SHM system budowania `cmake` (10 punktów, 2 za każdy podpunkt)
-* Przygotujcie SHM do testowania (10 punktów, 2 za każdy podpunkt)
-
-#### Bonus
-
-* Dostarczenie przed niedzielą 05.07.2020 23:59 (2 punkty za zadanie, razem 4)
+* Dorzućcie do projektu university-db system budowania `cmake` (10 XP)
 
 ___
 
-### `cmake` w SHM
+### `cmake` w university-db
 
 * Użyjcie zmiennej `${PROJECT_NAME}`
 * Lista plików cpp w zmiennej
@@ -46,7 +34,17 @@ ___
 
 ___
 
-### Podwaliny pod testy w SHM
+### `cmake` w SHM (Premium)
+
+* Użyjcie zmiennej `${PROJECT_NAME}`
+* Lista plików cpp w zmiennej
+* Wszystko poza plikiem `main.cpp` powinno kompilować się do biblioteki statycznej
+* Binarka (main.cpp) powinna linkować się z powyższą biblioteką.
+* Napiszcie odpowiedni plik `.github/workflows/main.yml` który spowoduje, że GitHub będzie automatycznie uruchamiał kompilację projektu dla każdego nowego commita.
+
+___
+
+### Podwaliny pod testy w SHM (Premium)
 
 Na podstawie lektury plików CMakeLists.txt z prac domowych wywnioskujcie, w jaki sposób dodawana jest biblioteka `gtest` do testów
 

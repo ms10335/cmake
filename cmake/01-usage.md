@@ -12,10 +12,10 @@ ___
 
 * <!-- .element: class="fragment fade-in" --> automatyzuje proces budowania dla C/C++
 * <!-- .element: class="fragment fade-in" --> obsługuje generowanie projektów dla wielu IDE
-* <!-- .element: class="fragment fade-in" --> może składać się z wielu modułów, które się łączy (odpowiednik #include)
+* <!-- .element: class="fragment fade-in" --> może składać się z wielu modułów, które się łączy (odpowiednik <code>#include</code>)
 * <!-- .element: class="fragment fade-in" --> niezależny od platformy (jeśli jest dobrze napisany)
 * <!-- .element: class="fragment fade-in" --> konfiguracja budowania w pliku CMakeLists.txt
-* <!-- .element: class="fragment fade-in" --> generuje system budowania (np. pliki Makefile, solution dla VS)
+* <!-- .element: class="fragment fade-in" --> generuje system budowania (np. pliki Makefile, <code>*.sln</code> dla VS)
 
 ___
 
